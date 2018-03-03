@@ -4,6 +4,7 @@ import numpy as np
 import argparse
 import cv2
 import imutils
+from ocr import preprocess,ocr
 
 
 def edgeDetection(image):
@@ -67,6 +68,11 @@ def main():
 	edged = edgeDetection(image)
 	screenCnt = findContour(edged)
 	scannedImage = scan(screenCnt,image)
+	
+	### OCR
+	processedImg = preprocess(scannedImage)
+	ocr(processedImg)
+	
 	cv2.imshow("Scanned", imutils.resize(scannedImage, height = 650))
 	cv2.waitKey(0)
 	cv2.destroyAllWindows()
