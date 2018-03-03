@@ -1,3 +1,6 @@
 # Document Scanner and OCR
 
-# Document Scanner using OpenCV in Python
+1. Document Scanner using opencv and perspective transform
+2. OCR using tesseract
+
+courtesy: pyimagesearch.com
